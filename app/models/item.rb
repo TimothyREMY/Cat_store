@@ -6,7 +6,7 @@ class Item < ApplicationRecord
     presence: true, 
     length: { in: 5..140}
   
-  validates :description
+  validates :description,
     presence: true, 
     length: { in: 20..1000 }
   
@@ -15,7 +15,7 @@ class Item < ApplicationRecord
     numericality: {greater_than: 0.00}
   
   validates :image_url, 
-    presence: true,
-    validates_format_of :image_url, :with => /\A(https?://)?([\da-z.-]+).([a-z.]{2,6})([/\w.-])/?\Z/i
+    presence: true
+
     
 end
