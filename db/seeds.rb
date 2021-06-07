@@ -1,7 +1,7 @@
-User.delete_all
-Cart.delete_all
-Order.delete_all
-Selection.delete_all
+#User.delete_all
+#Cart.delete_all
+#Order.delete_all
+#Selection.delete_all
 Item.delete_all
 
 20.times do 
