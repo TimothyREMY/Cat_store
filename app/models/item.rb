@@ -1,7 +1,10 @@
 class Item < ApplicationRecord
     
-  has_many :selection 
+  has_many :selections 
+  has_many :carts, through: :selections
+  has_many :orders, through: :selections
 
+  
   validates :title,
     presence: true, 
     length: { in: 5..140}
