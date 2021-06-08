@@ -1,0 +1,39 @@
+<div class="container pt-5 pb-4 fw-bold">
+    <h3 class="fw-bold display-5"> Les photos actuellement en vente </h3>
+  </div>
+
+
+    <section class="container card-group pb-5">
+    
+      <% @items.each do |item| %> 
+      
+        <div class="row row-cols-1 row-cols-md-2 g-4">
+          <div class="col">
+
+            <div class="card m-3 bg-white text-dark" style="width: 18rem;">
+                            
+              <img src="<% item.image_url %>" class="card-img-top" alt="<% item.title%>">
+              
+              <!-- <img src="https://images-ext-1.discordapp.net/external/2dkSeg_r2Aj4f58DnU-LOfOLyIZfyMoTm9gYYNf_EUU/https/www.pkfoot.com/wp-content/uploads/2020/03/foot-anglais.jpg?width=1130&height=660" class="card-img-top" alt="..."> -->
+              
+                
+              <div class="card-body text-center">
+                
+                <p class="card-text ">Son titre: <%= item.title%></p>
+                <p class="card-text ">Sa description: <%= item.description%></p>
+                <br/>
+                <%= link_to "Accéder à la page de la photo", item_path(item.id), class:"btn btn-warning" %>
+              <% if user_signed_in? %>
+                <%= link_to "Ajouter au panier", item_selections_path(item), class:"btn btn-info", method:"POST" %>
+              <% else %>
+                <%= link_to "Se connecter pour l'acheter", new_user_session_path %>
+              <% end %>
+                
+                             
+              </div>
+            </div>
+          </div>
+        </div>
+        
+      <% end %>
+    </section>
