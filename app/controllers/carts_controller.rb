@@ -11,4 +11,7 @@ class CartsController < ApplicationController
     end
   end
 
+  def show
+    @items = Item.all
+  end
 end

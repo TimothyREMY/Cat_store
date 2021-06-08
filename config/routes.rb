@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   resources :items do
     resources :selections
   end
+  resources :carts
 
   resources :orders
 
