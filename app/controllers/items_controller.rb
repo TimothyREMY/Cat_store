@@ -6,6 +6,8 @@ class ItemsController < ApplicationController
 
   def index
     @items = Item.all 
+    a = @items.sort_by(&:price)
+    @stars = a.last(3)
   end
 
   def create
