@@ -6,6 +6,19 @@ class ItemsController < ApplicationController
 
   def index
     @items = Item.all 
+    a = @items.sort_by(&:price)
+    @stars = a.last(3)
+  end
+
+  def show
+    @items = Item.find(params[:id])
+
+    #rand items
+    @rand_items = []
+    3.times do
+    rand_item = Item.find(Item.all.sample.id)
+    @rand_items << rand_item 
+    end
   end
 
   def create
