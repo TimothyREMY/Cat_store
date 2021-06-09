@@ -8,6 +8,7 @@ gem 'table_print'
 gem 'devise'
 gem 'stripe'
 gem 'dotenv-rails'
+gem 'mailjet', :git => 'https://github.com/mailjet/mailjet-gem.git'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.3'
