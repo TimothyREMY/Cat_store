@@ -1,6 +1,4 @@
 class CheckoutController < ApplicationController
-  
-  after_create :create_order
 
 	def create
     @total = params[:total].to_d
@@ -25,15 +23,8 @@ class CheckoutController < ApplicationController
   def success
     @session = Stripe::Checkout::Session.retrieve(params[:session_id])
     @payment_intent = Stripe::PaymentIntent.retrieve(@session.payment_intent)
-  end
 
-  def cancel
-  end
-
-  private
-  def create_order
-    
-    @cart = Cart.find(params[:id])
+    @cart = Cart.find(current_user.id)
     @order = Order.new
     
     @order.user_id = @cart.user_id
@@ -45,5 +36,9 @@ class CheckoutController < ApplicationController
       selection.save
     end
   end
+
+  def cancel
+  end
+
 
 end

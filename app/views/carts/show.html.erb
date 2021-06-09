@@ -44,7 +44,7 @@
                 </div>
 
                 <div class="accordion" id="order-options">
-                  </div><%= button_to "Procéder au paiement", checkout_create_path(total: @cart.total_cart), class: "btn btn-primary btn-shadow d-block w-100 mt-4", remote: true %>
+                  </div><%= button_to "Procéder au paiement", checkout_create_path(total: @cart.total_cart, :id => @cart.id), class: "btn btn-primary btn-shadow d-block w-100 mt-4", remote: true %>
                   </div>
               </div>  
         </div>
