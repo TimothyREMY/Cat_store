@@ -4,9 +4,10 @@
     <div class="row">
         <div class="col-lg-7 m-3">
           <div class="card p-2">
-              <div class="card-body">
+              <div class="card-body text-center">
                   <h4 class="text-primary">Mon Panier</h4>
               </div>
+              <% if @cart.selections.length != 0 %>
                 <ul class="list-group list-group-flush"> 
                 <% @cart.selections.each do |selection|%>                
                     <li class="list-group-item" >
@@ -31,8 +32,15 @@
                     </li>
                     
                     <% end %>
+              <% else %>
+                <div class="flex center">
+              <p  class="text-center">Votre panier est vide pour le moment.</p>
+              <img src="https://media.giphy.com/media/TjS7u7yoMC2KubI5wE/giphy.gif" class="rounded mx-auto d-block" alt="this slowpoke moves"  width="250" /></div>
+              <% end %>
                     
                 </ul>
+
+                
           </div>
         </div>
         <div class="col-lg-4 m-3 align-self-center">
