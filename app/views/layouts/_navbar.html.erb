@@ -21,28 +21,31 @@
           </a>
         </li>
 <%if user_signed_in? %>
-          <li class="nav-item dropdown active">
-            <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Mon espace                    
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <%= link_to "Mon profil", root_path, class: "dropdown-item" %>
-              <%= link_to "Mes commandes", root_path, class: "dropdown-item" %>
-              <%= link_to "Se déconnecter", destroy_user_session_path, class: "dropdown-item bg-danger text-white", method: :delete %>
-            </div>
-          </li>
+        <li  class="nav-item">
+          <%= link_to '<i class="fas fa-shopping-cart"></i>'.html_safe, cart_path(cart.id)%>
+        </li>
+        <li class="nav-item dropdown active">
+          <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Mon espace                    
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <%= link_to "Mon profil", root_path, class: "dropdown-item" %>
+            <%= link_to "Mes commandes", root_path, class: "dropdown-item" %>
+            <%= link_to "Se déconnecter", destroy_user_session_path, class: "dropdown-item bg-danger text-white", method: :delete %>
+          </div>
+        </li>
 
 <% else %>
 
-          <li class="nav-item dropdown active">
-            <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Se connecter 
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <%= link_to 'Se connecter', new_user_session_path, class: "dropdown-item " %>
-              <%= link_to "S'inscrire", new_user_registration_path, class: "dropdown-item" %>
-            </div>
-          </li>
+        <li class="nav-item dropdown active">
+          <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Se connecter 
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <%= link_to 'Se connecter', new_user_session_path, class: "dropdown-item " %>
+            <%= link_to "S'inscrire", new_user_registration_path, class: "dropdown-item" %>
+          </div>
+        </li>
 <% end %>
       </ul>
     </div>
