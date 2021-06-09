@@ -15,7 +15,6 @@ class User < ApplicationRecord
     puts "Voici le panier numéro #{Cart.last.id}"
   end
 
-  
 
   def welcome_send
     UserMailer.welcome_email(self).deliver_now

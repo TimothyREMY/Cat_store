@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Salut  et merci pour votre commande <%= @order.id %> !</h1>
+    
+    
+    <p>
+      Voici ta commande :
+    </p>
+
+    <div>
+
+    <%= @order.selections%>
+      
+        <ul>
+            <%= @order.selections.each do |selection| %>
+            <li>
+              <img src="<%=selection.item.image_url%>" alt="test">
+              <p>test image</p>
+            </li>
+            
+            <% end %>
+        </ul>
+    
+    
+    </div>
+
+    <p> À très vite sur monsite.fr !
+  </body>
+</html>
+
