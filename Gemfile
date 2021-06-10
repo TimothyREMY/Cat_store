@@ -9,6 +9,7 @@ gem 'devise'
 gem 'stripe'
 gem 'dotenv-rails'
 gem 'mailjet', :git => 'https://github.com/mailjet/mailjet-gem.git'
+gem 'rails_admin', '~> 2.0'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.3'
