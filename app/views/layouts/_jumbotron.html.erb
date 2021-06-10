@@ -5,7 +5,9 @@
       <h5 class="text-light fw-light pt-5">Bienvenue sur le Cat-Alogue by THP </h5>
         <div class="pb-4"> 
           <h1 class="text-light font-weight-bold pt-3 fw-bold">Parcourez et achetez les photos des plus beaux chats de France</h1>  
-          <%= link_to "Ou vendez les votres...!", new_item_path, class:"btn btn-primary" %>
+        <% if user_signed_in? == false %>
+          <%= link_to 'Se connecter', new_user_session_path, class: "btn btn-primary" %>
+        <% end %>
         </div>      
       </div>
     </div>
