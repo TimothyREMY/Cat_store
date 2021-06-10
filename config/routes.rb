@@ -7,14 +7,14 @@ Rails.application.routes.draw do
   root "items#index"
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
-  resources :items do
+  resources :items, path: "photo" do
     resources :selections
     resources :pictures, only: [:create]
   end
 
-  resources :carts
+  resources :carts, path: "mon_panier"
   resources :orders
-  resources :users
+  resources :users, path: "mon_profil"
 
   scope '/checkout' do
     post 'create', to: 'checkout#create', as: 'checkout_create'
