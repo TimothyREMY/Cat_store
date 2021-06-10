@@ -1,0 +1,7 @@
+var cartBtnValue = <%=Cart.find(current_user.id).selections.length %>;
+
+
+document.getElementById("cart-btn-value").innerHTML =" " + cartBtnValue;
+
+
+alert("Une photo a bien été ajoutée dans votre panier, vous en avez " + cartBtnValue + " actuellement");

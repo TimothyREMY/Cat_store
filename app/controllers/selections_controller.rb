@@ -10,12 +10,18 @@ class SelectionsController < ApplicationController
     @selection.item_id = params[:item_id]
     if @selection.save
       flash[:success] = "Photo ajoutée au panier!"
-      puts "Succès ! #{@selection.item_id} a été ajouté au panier #{Cart.find_by(user_id: current_user.id)}"
-      redirect_to(root_path)
+      puts "Succès ! #{@selection.item_id} a été ajouté au panier #{Cart.find(@current_user.id)}"
+      respond_to do |format|
+        format.html {redirect_to root_path}
+        format.js { }
+      end
     else
       flash[:error] = @selection.errors.messages
       puts "Nul !"
-      redirect_to(root_path)
+      respond_to do |format|
+        format.html {redirect_to root_path}
+        format.js { }
+      end
     end
   end
 

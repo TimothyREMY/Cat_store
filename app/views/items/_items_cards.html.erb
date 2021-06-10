@@ -21,7 +21,7 @@
                 <br/>
                 <%= link_to "Accéder à la page de la photo", item_path(item.id), class:"btn btn-warning" %>
               <% if user_signed_in? %>
-                <%= link_to "Ajouter au panier", item_selections_path(item), class:"btn btn-info", method:"POST" %>
+                <%= link_to "Ajouter au panier", item_selections_path(item), class:"btn btn-info", method:"POST", remote: true %>
               <% else %>
                 <%= link_to "Se connecter pour l'acheter", new_user_session_path %>
               <% end %>

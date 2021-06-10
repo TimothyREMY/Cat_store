@@ -24,7 +24,7 @@
         <p> <%= item.description %> </p>
         <p> <%= item.price %>€</p>
         <%= link_to "Accéder à la photo", item_path(item.id), class:"btn btn-warning" %>  
-        <%= link_to "Ajouter au panier", item_selections_path(item), class:"btn btn-info", method:"POST" %>  
+        <%= link_to "Ajouter au panier", item_selections_path(item), class:"btn btn-info", method:"POST", remote:true %>  
       </div>
       
     <% end %>
