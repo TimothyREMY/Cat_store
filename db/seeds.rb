@@ -10,7 +10,7 @@ Item.delete_all
 7.times do |i|
   item = Item.create(title: ["Doudou", "Chouchou", "Poupou", "Loulou", "Minou", "Pikachu", "Patapon", "Grosminet", "Popeye", "Berlioz", "Billy", "Azraël", "Othello", "Toulouse", "O’Malley", "Figaro", "Oliver", "Felix", "Lucifer", "Olympe"].sample, description: Faker::Lorem.sentence(word_count: 20), price: rand(10..1000))
   
-  item.image_url.attach(io: File.open("app/assets/images/pic_#{i}.jpg"), filename: "pic_1.jpg")
+  item.image_url.attach(io: File.open("app/assets/images/pic_#{i}.jpg"), filename: "pic_#{i}.jpg")
   puts "Item number #{i} a été créé"
 
 end

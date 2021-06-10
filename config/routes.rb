@@ -15,7 +15,7 @@ Rails.application.routes.draw do
   resources :layouts, only: [:index], path: "notre_equipe" 
   resources :carts, only: [:new, :create, :index], path: "mon_panier"
   resources :orders, path: "vos_commandes"
-  resources :users
+  resources :users, path: "mon_profil"
 
   scope '/checkout' do
     post 'create', to: 'checkout#create', as: 'checkout_create'

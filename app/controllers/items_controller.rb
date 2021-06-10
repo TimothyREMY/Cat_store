@@ -13,7 +13,6 @@ class ItemsController < ApplicationController
   def show
     @items = Item.find(params[:id])
 
-    #rand items
     @rand_items = []
     3.times do
     rand_item = Item.find(Item.all.sample.id)

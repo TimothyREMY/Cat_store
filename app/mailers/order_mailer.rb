@@ -6,8 +6,6 @@ class OrderMailer < ApplicationMailer
     @order = order
     @user = @order.user
 
-    @selection = order.selections 
-
     mail(to: @user.email, subject: 'Merci pour votre commande') 
 
   end

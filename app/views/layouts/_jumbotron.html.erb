@@ -20,7 +20,7 @@
     <% @stars.each do |item| %>
       <div class="col-md-4">
         <h2><%= item.title %></h2>
-        
+        <%= image_tag item.image_url, alt: "Photo de star", class: 'card-img-top' %>
         <p> <%= item.description %> </p>
         <p> <%= item.price %>€</p>
         <%= link_to "Accéder à la photo", item_path(item.id), class:"btn btn-warning" %>  
