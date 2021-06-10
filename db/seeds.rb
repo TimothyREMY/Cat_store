@@ -4,8 +4,15 @@
 #Selection.delete_all
 Item.delete_all
 
-s3 = Aws::S3::Resource.new(region: 'eu-west-3') # Change this to your region
+require 'aws-sdk-s3'
+s3 = Aws::S3::Resource.new
 
+bucket = s3.bucket(ENV['AWS_BUCKET'])
+#s3 = Aws::S3::Resource.new(region: 'eu-west-3') # Change this to your region
+
+bucket.object.each do |obj|
+  puts obj
+end
 
 7.times do |i|
   item = Item.create(title: ["Doudou", "Chouchou", "Poupou", "Loulou", "Minou", "Pikachu", "Patapon", "Grosminet", "Popeye", "Berlioz", "Billy", "Azraël", "Othello", "Toulouse", "O’Malley", "Figaro", "Oliver", "Felix", "Lucifer", "Olympe"].sample, description: Faker::Lorem.sentence(word_count: 20), price: rand(10..1000), image_url: "https://images.pexels.com/photos/2173872/pexels-photo-2173872.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260")
@@ -13,10 +20,10 @@ s3 = Aws::S3::Resource.new(region: 'eu-west-3') # Change this to your region
   puts "Item number #{i} a été créé"
 
  # Create the object to retrieve
- obj = s3.bucket('ENV['AWS_BUCKET']').object("pic_#{i}.jpg")    # change this to your bucket name
+ #obj = s3.bucket(ENV['AWS_BUCKET']).object("pic_#{i}.jpg")    # change this to your bucket name
 
  # Get the item's content and save it to local
- #obj.get(response_target: "app/assets/images/pic_#{i}.jpg")
+ obj.get(response_target: "app/assets/images/pic_#{i}.jpg")
 
 end
 
