@@ -25,7 +25,7 @@
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
             <%= link_to "Mon profil", root_path, class: "dropdown-item" %>
-            <%= link_to "Mes commandes", root_path, class: "dropdown-item" %>
+            <%= link_to "Mes commandes", orders_path, class: "dropdown-item" %>
             <%= link_to "Se déconnecter", destroy_user_session_path, class: "dropdown-item bg-danger text-white", method: :delete %>
           </div>
         </li>
