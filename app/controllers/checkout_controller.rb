@@ -37,6 +37,7 @@ class CheckoutController < ApplicationController
     end
 
     OrderMailer.order_email(@order).deliver_now
+    AdminMailer.admin_email(@order).deliver_now
 
   end
 
