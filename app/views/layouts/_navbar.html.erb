@@ -32,7 +32,7 @@
         </li>
         <li>
           <%= link_to cart_path(current_user.id), class: 'btn btn-primary' do %>
-            <span class="glyphicon glyphicon-eye-open"></span> <i class="fas fa-shopping-cart"> <%=Cart.find(current_user.id).selections.length %></i>
+            <span class="glyphicon glyphicon-eye-open"></span> <i class="fas fa-shopping-cart" id="cart-btn-value"> <%=Cart.find(current_user.id).selections.length %></i>
           <% end %>
         </li>
         </ul>
