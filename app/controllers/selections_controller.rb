@@ -6,7 +6,7 @@ class SelectionsController < ApplicationController
 
   def create
     @selection = Selection.new
-    @selection.cart = Cart.find(current_user.id)
+    @selection.cart = Cart.find_by(user_id: current_user.id)
     @selection.item_id = params[:item_id]
     if @selection.save
       flash[:success] = "Photo ajoutée au panier!"
@@ -26,12 +26,12 @@ class SelectionsController < ApplicationController
   end
 
   def destroy
-    @cart = Cart.find(current_user.id)
+    @cart = Cart.find_by(user_id: current_user.id)
     @selection = Selection.find(params[:id])
     @selection.destroy
     flash[:success] = "Photo supprimée au panier!"
-      puts "Succès ! #{@selection.item_id} a été supprimé du panier #{Cart.find(@current_user.id)}"
-      redirect_to cart_path(@cart.id)
+      puts "Succès ! #{@selection.item_id} a été supprimé du panier #{Cart.find_by(user_id: current_user.id)}"
+      redirect_to carts_path
   end
 
 end

@@ -4,8 +4,7 @@ Salut et merci pour votre commande |n° <%= @order.id %>| !
 Voici votre commande : 
 <%= @order.selections.each do |selection| %>
             
-<%=selection.item.image_url%>
-             
+<%= image_tag selection.item.image_url, alt: 'photo de chat', class: 'w-100' %>
 <% end %>
        
     

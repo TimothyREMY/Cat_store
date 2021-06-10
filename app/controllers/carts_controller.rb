@@ -1,5 +1,6 @@
 class CartsController < ApplicationController
-
+  before_action :authenticate_user!
+  
   def new
     @cart = Cart.new
   end
@@ -13,8 +14,13 @@ class CartsController < ApplicationController
 
   def show
     @items = Item.all
-    @cart = Cart.find(params[:id])
+    @cart = Cart.find_by(user_id: current_user.id)
     
+  end
+
+  def index
+    @items = Item.all
+    @cart = Cart.find_by(user_id: current_user.id)
   end
 
 

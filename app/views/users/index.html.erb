@@ -15,6 +15,7 @@
           <div class="card-body">
             <h3>Profil</h3>
             <p> <%= @users.email %> </p>
+            <%= link_to "Mettre à jour son profil", edit_user_registration_path, class:"btn btn-info" %>
           </div>
         </div>
         <div class="card border-0 mb-4">
@@ -40,7 +41,7 @@
 
                 <div class="card m-3 bg-white text-dark" style="width: 18rem;">
                     <div class="card-header">
-                      Commande n°<%= order.id%>
+                      Commande n°<%= order.id%> // <%= order.created_at.strftime("%Y-%d-%m") %>
                     </div>
                   <div class="card-body text-center">
                     

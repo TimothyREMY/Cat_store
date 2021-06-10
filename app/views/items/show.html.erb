@@ -1,5 +1,5 @@
 
-  <div class="row single-product mt-5 mb-5">
+  <div class="row single-product mt-5">
     <div class="col-md-6 offset-md-2">
       <div class="row">
             <div class="col-md-5 margin-b-30">
@@ -31,10 +31,11 @@
       <% @rand_items.each do |rand_item|%>
         <div class="col mx-5">
           <div class="card" style="18rem;">
-            <img src="<%=rand_item.image_url%>" class="card-img-top" alt="Chaton mignon">
+            <%= image_tag rand_item.image_url, alt: 'photo de chat', class: 'card-img-top' %>
             <div class="card-body">
               <h4 class="card-title"><%= rand_item.title %></h4>
               <p class="card-text"><%= rand_item.description %></p>
+              <%= link_to "Accéder à la page de la photo", item_path(rand_item.id), class:"btn btn-warning" %>
             </div>
           </div>
         </div>

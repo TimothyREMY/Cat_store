@@ -17,9 +17,5 @@ class Item < ApplicationRecord
   validates :price,
     presence: true,
     numericality: {greater_than: 0.00}
-  
-  #validates :image_url, 
-    #presence: true
 
-    
 end

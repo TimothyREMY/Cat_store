@@ -21,7 +21,6 @@
       <div class="col-md-4">
         <h2><%= item.title %></h2>
         <%= image_tag item.image_url, alt: "Photo de star", class: 'card-img-top' %>
-        <img src="<%= item.image_url %>" class="card-img-top" alt="<% item.title%>">
         <p> <%= item.description %> </p>
         <p> <%= item.price %>€</p>
         <%= link_to "Accéder à la photo", item_path(item.id), class:"btn btn-warning" %>  
