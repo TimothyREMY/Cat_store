@@ -1,5 +1,7 @@
 class Cart < ApplicationRecord
-
+    extend FriendlyId
+    friendly_id :id, use: :slugged
+    
     belongs_to :user
     has_many :selections
     has_many :items, through: :selections

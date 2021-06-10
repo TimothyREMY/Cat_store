@@ -24,7 +24,7 @@ class CheckoutController < ApplicationController
     @session = Stripe::Checkout::Session.retrieve(params[:session_id])
     @payment_intent = Stripe::PaymentIntent.retrieve(@session.payment_intent)
 
-    @cart = Cart.find(current_user.id)
+    @cart = Cart.find_by(user_id: current_user.id)
     @order = Order.new
     
     @order.user_id = @cart.user_id

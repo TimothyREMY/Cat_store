@@ -15,10 +15,11 @@
     <%= javascript_include_tag 'application' %>
     <script src="https://js.stripe.com/v3/"></script>
     <%= render 'layouts/navbar' %>
+    <%= render "layouts/flash" %>
   </head>
 
-  <body>
-    <%= render "layouts/flash" %>
+  <body class="min-vh-100 d-flex flex-column justify-content-between">
+    
     <%= yield %>
     <%= render 'layouts/footer' %>
   </body>
