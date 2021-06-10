@@ -11,8 +11,9 @@
           <div class="col">
 
             <div class="card m-3 bg-white text-dark" style="width: 18rem;">
-                            
-              <img src="<% item.image_url %>" class="card-img-top" alt="<% item.title%>">
+              <p class="card-title text-muted text-center pt-3 small">Photo numéro <%= item.id%></p>
+              
+              <img src="<%= item.image_url %>" class="card-img-top" alt="...">
               
               <!-- <img src="https://images-ext-1.discordapp.net/external/2dkSeg_r2Aj4f58DnU-LOfOLyIZfyMoTm9gYYNf_EUU/https/www.pkfoot.com/wp-content/uploads/2020/03/foot-anglais.jpg?width=1130&height=660" class="card-img-top" alt="..."> -->
               
@@ -23,6 +24,12 @@
                 <p class="card-text ">Sa description: <%= item.description%></p>
                 <br/>
                 <%= link_to "Accéder à la page de la photo", item_path(item.id), class:"btn btn-warning" %>
+              <% if user_signed_in? %>
+                <%= link_to "Ajouter au panier", item_selections_path(item), class:"btn btn-info", method:"POST" %>
+              <% else %>
+                <%= link_to "Se connecter pour l'acheter", new_user_session_path %>
+              <% end %>
+                
                              
               </div>
             </div>

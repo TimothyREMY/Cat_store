@@ -20,10 +20,11 @@
     <% @stars.each do |item| %>
       <div class="col-md-4">
         <h2><%= item.title %></h2>
-        <img src="<% item.image_url %>" class="card-img-top" alt="<% item.title%>">
+        <img src="<%= item.image_url %>" class="card-img-top" alt="<% item.title%>">
         <p> <%= item.description %> </p>
         <p> <%= item.price %>€</p>
-        <%= link_to "Accéder à la photo", item_path(item.id), class:"btn btn-warning" %>    
+        <%= link_to "Accéder à la photo", item_path(item.id), class:"btn btn-warning" %>  
+        <%= link_to "Ajouter au panier", item_selections_path(item), class:"btn btn-info", method:"POST" %>  
       </div>
       
     <% end %>

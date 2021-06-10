@@ -3,6 +3,7 @@ class Item < ApplicationRecord
   has_many :selections 
   has_many :carts, through: :selections
   has_many :orders, through: :selections
+  has_one_attached :picture
 
   
   validates :title,
@@ -17,8 +18,8 @@ class Item < ApplicationRecord
     presence: true,
     numericality: {greater_than: 0.00}
   
-  validates :image_url, 
-    presence: true
+  #validates :image_url, 
+    #presence: true
 
     
 end

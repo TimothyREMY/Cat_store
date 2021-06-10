@@ -9,12 +9,16 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+    
     <%= stylesheet_link_tag    'application', media: 'all' %>
+    
     <%= javascript_include_tag 'application' %>
+    <script src="https://js.stripe.com/v3/"></script>
     <%= render 'layouts/navbar' %>
   </head>
 
   <body>
+    <%= render "layouts/flash" %>
     <%= yield %>
     <%= render 'layouts/footer' %>
   </body>
