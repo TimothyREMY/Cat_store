@@ -1,0 +1,14 @@
+Salut  et merci pour votre commande |n° <%= @order.id %>| !
+---------------------------------------------------------
+
+Voici votre commande : 
+<%= @order.selections.each do |selection| %>
+            
+<%=selection.item.image_url%>
+             
+<% end %>
+       
+    
+---------------------------------------------------------
+À très vite sur monsite.fr !
+
