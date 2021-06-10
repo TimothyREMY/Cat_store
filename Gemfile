@@ -3,7 +3,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.7.1'
 
-gem 'aws-sdk'
+gem "aws-sdk-s3", require: false
 gem 'faker'
 gem 'table_print'
 gem 'devise'

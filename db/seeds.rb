@@ -16,7 +16,7 @@ s3 = Aws::S3::Resource.new(region: 'eu-west-3') # Change this to your region
  obj = s3.bucket('ENV['AWS_BUCKET']').object("pic_#{i}.jpg")    # change this to your bucket name
 
  # Get the item's content and save it to local
- #obj.get(response_target: "app/assets/images/pic_#{i}.jpg")
+ obj.get(response_target: "app/assets/images/pic_#{i}.jpg")
 
 end
 
