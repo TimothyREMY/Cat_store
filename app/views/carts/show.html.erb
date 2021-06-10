@@ -35,7 +35,8 @@
                                   <a href="#!" class="text-decoration-none">
                                       <div class="d-lg-flex align-items-center">
                                           <div>
-                                              <img src="<%=selection.item.image_url%>" alt="" class="rounded img-4by3-lg m-4"  style="height: 100px;">
+                                              <%= image_tag selection.item.image_url, alt: 'photo de chat', class: 'rounded img-4by3-lg m-4', style: 'height:100px' %>
+                                              
                                           </div>
                                           <div class="ml-lg-3 mt-2">
                                               <h4 class="mb-O text-secondary"><%= selection.item.title %></h4>
