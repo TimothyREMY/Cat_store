@@ -20,6 +20,7 @@ s3 = Aws::S3::Resource.new(region: 'eu-west-3') # Change this to your region
 
 end
 
+
 #item.picture.attach(io: File.open(app_assets_images_path), filename: 'pic_1.jpg', content_type: 'image/jpg')
 #flat.images.attach(io: File.open(my_second_image_path), filename: 'image_name.png', content_type: 'image/png')
 =begin
@@ -30,3 +31,6 @@ end
   Selection.create(item_id: Item.all.sample.id, cart_id: Cart.all.sample.id, order_id: Order.all.sample.id)
 end
 =end
+
+
+
