@@ -4,6 +4,7 @@
 #Selection.delete_all
 Item.delete_all
 
+require 'aws-sdk-s3'
 s3 = Aws::S3::Resource.new
 
 bucket = s3.bucket(ENV['AWS_BUCKET'])
