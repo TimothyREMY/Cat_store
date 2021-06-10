@@ -3,7 +3,7 @@ class Item < ApplicationRecord
   has_many :selections 
   has_many :carts, through: :selections
   has_many :orders, through: :selections
-  has_one_attached :picture
+  has_one_attached :image_url
 
   
   validates :title,
