@@ -2,17 +2,13 @@ class OrderMailer < ApplicationMailer
   default from: 'no-reply-thp-cat-alogue@yopmail.com'
 
   def order_email(order)
-
-    puts order.id
+    
+    
     @order = order
-
-    puts @order
     @user = @order.user
 
     @selection = order.selections 
     
-    puts @selection 
-    puts @order.id
    
 
     
