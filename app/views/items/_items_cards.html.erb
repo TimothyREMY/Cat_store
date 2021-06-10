@@ -11,7 +11,7 @@
           <div class="col">
 
             <div class="card m-3 bg-white text-dark" style="width: 18rem;">
-              <p class="card-title text-muted text-center pt-3 small">Photo numéro <%= item.id%></p>
+              
               
               <img src="<%= item.image_url %>" class="card-img-top" alt="...">
               
@@ -20,7 +20,7 @@
                 
               <div class="card-body text-center">
                 
-                <p class="card-text ">Son titre: <%= item.title%></p>
+                <p class="card-text ">Son nom: <%= item.title%></p>
                 <p class="card-text ">Sa description: <%= item.description%></p>
                 <br/>
                 <%= link_to "Accéder à la page de la photo", item_path(item.id), class:"btn btn-warning" %>
