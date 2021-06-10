@@ -8,6 +8,7 @@ class ItemsController < ApplicationController
     @items = Item.all 
     a = @items.sort_by(&:price)
     @stars = a.last(3)
+    
   end
 
   def show
