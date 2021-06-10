@@ -4,7 +4,7 @@
       <div class="row">
             <div class="col-md-5 margin-b-30">
                 <div class="item">
-                      <img class="img-thumbnail img-responsive p-2" alt="photo de chat" src="<%= @items.image_url%>" />
+                      <%= image_tag @items.picture, alt: 'photo de chat', class: 'w-100' %>
                 </div>
             </div>
             <div class="col-md-7">
@@ -14,7 +14,7 @@
                     <p class="mt-2"><%= @items.description %></p>
                     <div class="available mt-5">En stock</div>
                     <div class="add-buttons">
-                        <a href="#" data-toggle="tooltip" data-placement="top" title="Add to cart" class="btn btn-success btn-lg mt-3"><i class="fa fa-shopping-cart"></i> Ajouter au panier</a>
+                        <%= link_to "Ajouter au panier", item_selections_path(@items), class:"btn btn-info", method:"POST" %>
                     </div>
                 </div>
             </div>

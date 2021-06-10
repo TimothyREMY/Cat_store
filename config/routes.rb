@@ -7,6 +7,7 @@ Rails.application.routes.draw do
 
   resources :items do
     resources :selections
+    resources :pictures, only: [:create]
   end
 
   resources :carts
