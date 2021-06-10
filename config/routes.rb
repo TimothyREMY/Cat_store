@@ -12,6 +12,7 @@ Rails.application.routes.draw do
     resources :pictures, only: [:create]
   end
 
+  resources :layouts, only: [:index]
   resources :carts
   resources :orders
   resources :users
